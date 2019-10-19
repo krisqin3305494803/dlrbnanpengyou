@@ -6,16 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        #box{
-            color:red;
-        }
-    </style>
+    .box div{
+        width: 100px;
+        height: 100px;
+        /* display: inline-block; */
+        float: left;
+    }
+    .div1{
+        background-color: red;
+    }
+    .div2{
+        background-color: blue;
+    }
+    .div3{
+        background-color: yellow;
+    }
+    .box{
+        background-color: saddlebrown;
+    }
+    /* p{
+        clear:both;
+    } */
+    .clearfix::after{
+        content: "";
+        display : block;
+        clear: both;
+    }
+        </style>
 </head>
 <body>
-    <div class="div1">
-        hello world
-    </div>
-    <div class="div1"id="box">abcd</div>
-    <div class="div2">hello fellow37</div>
+    <div class="box clearfix">
+    <div class="div1">1</div>
+    <div class="div2">2</div>
+    <div class="div3">3</div>
+    <p></p>
 </body>
 </html>
