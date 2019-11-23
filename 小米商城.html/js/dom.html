@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0 auto;
+        padding-top: 300px;
+    }
+    .aaa{
+        height: 700px;
+        width: 500px;
+        margin: 0 auto;
+        margin-bottom: 0px;
+        background: burlywood;
+        border-left: 1px solid #000;
+    }
+    .bbb{
+        margin-left: 250px;
+        margin-top: 300px;
+    }
+</style>
+<body><div>
+    <div class="aaa">
+        <button class="bbb">开始</button>
+    </div>
+</div>
+<script>
+var num=100;
+var ccc=document.getElementsByClassName("bbb")[0]
+ccc.onclick=function(){
+    ccc.innerText="暂停";
+    var timer=window.setInterval(function(){
+    console.log(num)
+    num--;
+    if(num==0){
+        clearInterval(timer);
+    }
+},1000)
+}
+</script>
+</body>
+</html>
