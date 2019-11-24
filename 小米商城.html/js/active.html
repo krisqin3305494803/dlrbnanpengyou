@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active{
+            color:white;
+        }
+        .li{
+            list-style: none;
+        }
+    .container{
+        width: 500px;
+        margin: 200px auto;
+        background-color: white;
+        border: 1px solid black;
+    }
+    .top{
+        height: 30px;
+        background-color: black;
+        color: white;
+    }
+    .a,.b,.c{
+        float: left;
+        margin-left: 50px;
+    }
+    </style>
+</head>
+<body>
+        <div class="container">
+            <div class="top">
+                 <div class="a">第一节课</div>
+                <div class="b">第二节课</div>
+                <div class="c">第三节课</div>
+            </div>
+            <div class="bottom">
+                <ul>
+                    <li>第一节课内容</li>
+                    <li>第一节课内容</li>
+                    <li>第一节课内容</li>
+                </ul>
+            </div>
+    </div>
+    <script>
+
+    var aLi=document.getElementsByTagName("li");
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].onmouseover=function(){
+            for(var j=0;j<aLi.length;j++)
+            {
+                aLi[j].classList.remove("active");
+            }
+            this.classList.add("active");
+        }
+    }
+   </script>
+</body>
+</html>

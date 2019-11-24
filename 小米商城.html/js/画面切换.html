@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #image0,#image1,#image2,#image3{
+            width: 300px;
+            height: 300px;
+        }
+        #image4{
+            width: 1200px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img id="image0" src="zed1.jpg" alt="">
+        <img id="image1" src="zed2.jpg" alt="">
+        <img id="image2"  src="zed3.jpg" alt="">
+        <img id="image3" src="zed4.jpg" alt="">
+        <img id="image4" src=" " alt="">
+    </div>
+    <script>
+    var oImage0 =document.getElementById("image0");
+    var oImage1 =document.getElementById("image1");
+    var oImage2 =document.getElementById("image2");
+    var oImage3=document.getElementById("image3")
+    var oImage4=document.getElementById("image4");
+
+for(var i=0;i<oImage.length;i++){
+    
+}
+ oImage1.onmouseover=function(){
+         console.log(this.getAttribute("src"));
+        oImage4.setAttribute("src","zed2.jpg");
+     }
+     oImage2.onmouseover=function(){
+         console.log(this.getAttribute("src"));
+        oImage4.setAttribute("src","zed3.jpg");
+     }
+      oImage3.onmouseover=function(){
+         console.log(this.getAttribute("src"));
+        oImage4.setAttribute("src","zed4.jpg");
+     }
+    
+    oImage0.onmouseover=function()
+    {
+        console.log(this.getAttribute("src"));
+        oImage4.setAttribute("src","zed1.jpg");
+    }
+ 
+    </script>
+</body>
+</html>
