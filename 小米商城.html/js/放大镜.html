@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 400px;
+            height: 400px;
+            background-image: url("123.jpg");
+            background-size: contain;
+            position: relative;
+
+        }
+
+        #fangdajing {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(194, 194, 218, 0.3);
+            display: inline-block;
+            position: absolute;
+        }
+
+        #fangdatu {
+            width: 800px;
+            height: 800px;
+            position: absolute;
+            left: 410px;
+            background-image: url("123.jpg");
+            background-size: contain;
+        }
+        #neirong{
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            left: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="fangdajing"></div>
+        <div id="fangdatu">
+            <div id="neirong"></div>
+        </div>
+    </div>
+    <script>
+        var oBox = document.getElementById("fangdajing");
+        var oNeirong = document.getElementById("neirong");
+        oBox.onmousedown = function (e) {
+            var thisLeft = e.clientX - oBox.offsetLeft;
+            var thisTop = e.clientY - oBox.offsetTop;
+            document.onmousemove = function (e) {
+                console.log(e.clientX, e.clientY)
+                oBox.style.left = e.clientX - thisLeft + "px";
+                oBox.style.top = e.clientY - thisTop + "px";
+                if(e.clientX- thisLeft>(400+"px")||e.clientY- thisTop>(400+"px"))
+                {
+                    document.onmousemove = null;
+                }
+            }
+        }
+
+        oBox.onmouseup = function () {
+            document.onmousemove = null;
+        }
+    
+
+    </script>
+</body>
+
+</html>
