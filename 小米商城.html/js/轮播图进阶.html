@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    body {
+      background-color: black;
+    }
+
+    .box {
+      margin: 0 auto;
+      width: 200px;
+      height: 170px;
+      border: 5px solid white;
+      position: relative;
+    }
+
+    .img-bar ul {
+      width: 1000px;
+      position: absolute;
+    }
+    .img-bar img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .img-bar ul li {
+      float: left;
+      width: 200px;
+      height: 170px;
+    }
+
+    .btn-bar {
+      width: 100%;
+      position: absolute;
+      bottom: 10px;
+      z-index: 10;
+    }
+
+    .btn-bar ul li {
+      float: left;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #f90;
+      text-align: center;
+      line-height: 20px;
+      color: white;
+      margin-left: 10px;
+    }
+
+    .left-btn {
+      float: left;
+    }
+
+    .right-btn {
+      float: right;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="img-bar">
+      <ul id="img-box">
+        <li>
+          <img src="zed1.jpg">
+        </li>
+        <li>
+          <img src="zed2.jpg">
+        </li>
+        <li>
+          <img src="zed3.jpg">
+        </li>
+        <li>
+          <img src="zed4.jpg">
+        </li>
+      </ul>
+    </div>
+    <div class="btn-bar">
+      <div class="left-btn">
+        <ul>
+          <li>&lt;</li>
+          <li>&gt;</li>
+        </ul>
+      </div>
+      <div class="right-btn">
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    var imgBox = document.getElementById("img-box");
+    var leftBtn = document.getElementsByClassName("left-btn")[0].getElementsByTagName("li");
+    var timer = null;
+    var a=true;
+    leftBtn[1].onclick = function () 
+    {
+      timer = setInterval(function () {
+        if(imgBox.offsetLeft/-200==1){
+            offsetLeft=offsetLeft-200;
+            clearInterval(timer);
+        }
+            else{
+          imgBox.style.left = imgBox.offsetLeft - 10 + "px";
+        }
+      }, 16)
+    }
+
+    // leftBtn[0].onclick = function () 
+    // {
+    //   timer = setInterval(function () {
+    //     if(imgBox.offsetLeft==0){
+    //         offsetLeft=offsetLeft+200;
+    //       clearInterval(timer)
+    //     }else{
+    //       imgBox.style.left = imgBox.offsetLeft + 10 + "px";
+    //     }
+    //   }, 16)
+    // }
+    
+  </script>
+</body>
+
+</html>
